@@ -8,3 +8,18 @@ html{
   font-size: 10px;
   scroll-behavior: smooth;
 }
+body{
+  background: #2e2e2e;
+}
+::-webkit-scrollbar{
+  width: 0.2rem;
+  height: 0.2rem;
+  background: #2e2e2e;
+}
+::-webkit-scrollbar-thumb{
+  visibility: hidden;
+  background: #39DC00;
+}
+::-webkit-scrollbar-thumb:hover{
+  visibility: visible;
+}
