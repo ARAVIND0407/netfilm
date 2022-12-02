@@ -1,0 +1,90 @@
+.LandingPage-Container {
+    width: 100%;
+    height: 100vh;
+    background: url(../../../public/NetFilm-Images/BackDrops/LandingBackdrop.png);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logoHolder {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15rem;
+    transition: transform 0.5s;
+}
+
+.logoHolder:hover {
+    transform: scale(105%);
+}
+
+.logoHolder .ShutterLogo {
+    width: 40rem;
+    height: 40rem;
+    animation: logoSpin 20s linear infinite;
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logoHolder .TextLogo {
+    width: 60rem;
+    height: 30rem;
+}
+
+.ExploreBtnHolder {
+    flex-basis: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ExploreBtnHolder .ExploreBtn {
+    width: 30rem;
+    height: 7rem;
+    border: 0;
+    outline: 0;
+    border-radius: 1rem;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    background: #39DC00;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ExploreBtnHolder .ExploreBtn::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    animation: lineWave 1s ease-in-out alternate infinite;
+}
+
+@keyframes lineWave {
+    from {
+        width: 0;
+        background: #39DC00;
+    }
+    to{
+        width: 90%;
+        background: #fff;
+    }
+}
