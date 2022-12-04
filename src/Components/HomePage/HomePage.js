@@ -4,7 +4,7 @@ import axios from '../Extras/axios_custom'
 import { useState } from 'react'
 import { ImageUrl, trending } from '../Extras/Urls'
 
-function HomePage() {
+function HomePage(props) {
 
     const [movie, setMovie] = useState();
     const [poster, setPoster] = useState([]);
@@ -30,12 +30,13 @@ function HomePage() {
             </nav>
             <div className="TrendingBannerMain">
                 <img src={`${movie ? ImageUrl + movie.backdrop_path : ''}`} alt="MovieBanner" />
+                <div className="overLay"></div>
                 <h1>{movie ? movie.title : ""}</h1>
                 <h1>{movie ? movie.name : ""}</h1>
                 <p>{movie ? movie.overview : ''}</p>
             </div>
             <div className="GenreLists">
-                <h1>Genre</h1>
+                <h1>{props.title}</h1>
                 <div className="PosterHolder">
                     {poster.map((object) => {
                         return(

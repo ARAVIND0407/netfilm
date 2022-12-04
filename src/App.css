@@ -13,7 +13,7 @@ body{
 }
 ::-webkit-scrollbar{
   width: 0.2rem;
-  height: 0.2rem;
+  height: 0.5rem;
   background: #2e2e2e;
 }
 ::-webkit-scrollbar-thumb{
