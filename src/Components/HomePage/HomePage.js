@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './HomePage.css'
 import axios from '../Extras/axios_custom'
 import { useState } from 'react'
-import { ImageUrl, trending } from '../Extras/Urls'
+import { ImageUrl, trending, API_Key } from '../Extras/Urls'
 
 function HomePage(props) {
 
@@ -17,6 +17,12 @@ function HomePage(props) {
         })
     }, [])
 
+    const displayDetails = (id)=>{
+        console.log(id);
+        axios.get(`/movie/${id}?api_key=${API_Key}&language=en-US`).then((res)=>{
+            setMovie(res.data)
+        })
+    }
     return (
         <div className='HomePage-Container'>
             <nav>
@@ -25,7 +31,7 @@ function HomePage(props) {
                 </div>
                 <div className="searchBar">
                     <input type="text" placeholder='Search' />
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                 </div>
             </nav>
             <div className="TrendingBannerMain">
@@ -40,7 +46,7 @@ function HomePage(props) {
                 <div className="PosterHolder">
                     {poster.map((object) => {
                         return(
-                            <img src={movie ? ImageUrl + object.poster_path : ''} alt="MoviePoster" />
+                            <img onClick={()=>displayDetails(object.id)} src={movie ? ImageUrl + object.poster_path : ''} alt="MoviePoster" />
                         )
                     })}
                 </div>

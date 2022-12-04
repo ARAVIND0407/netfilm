@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     {/* <LandingPage/> */}
-    <HomePage title='Trending'/>
+    <HomePage title='Featured'/>
     </>
   );
 }
