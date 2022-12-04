@@ -7,10 +7,13 @@ import { ImageUrl, trending } from '../Extras/Urls'
 function HomePage() {
 
     const [movie, setMovie] = useState();
+    const [poster, setPoster] = useState([]);
 
     useEffect(() => {
         axios.get(`${trending}`).then((result) => {
-            setMovie(result.data.results[1])
+            let x = Math.floor((Math.random() * 20) + 1);
+            setMovie(result.data.results[x])
+            setPoster(result.data.results);
         })
     }, [])
 
@@ -34,7 +37,11 @@ function HomePage() {
             <div className="GenreLists">
                 <h1>Genre</h1>
                 <div className="PosterHolder">
-                    
+                    {poster.map((object) => {
+                        return(
+                            <img src={movie ? ImageUrl + object.poster_path : ''} alt="MoviePoster" />
+                        )
+                    })}
                 </div>
             </div>
         </div>
