@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './HomePage.css'
+import axios from '../Extras/axios_custom'
+import { useState } from 'react'
+import { ImageUrl, trending } from '../Extras/Urls'
 
 function HomePage() {
+
+    const [movie, setMovie] = useState();
+
+    useEffect(() => {
+        axios.get(`${trending}`).then((result) => {
+            setMovie(result.data.results[1])
+        })
+    }, [])
+
     return (
         <div className='HomePage-Container'>
             <nav>
@@ -14,14 +26,15 @@ function HomePage() {
                 </div>
             </nav>
             <div className="TrendingBannerMain">
-                <img src="NetFilm-images/BackDrops/MovieDummy.jpg" alt="MovieBanner" />
-                <h1>MovieTitle</h1>
-                <p>MovieDescription Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium recusandae, necessitatibus maiores itaque quam sit aliquid minus</p>
+                <img src={`${movie ? ImageUrl + movie.backdrop_path : ''}`} alt="MovieBanner" />
+                <h1>{movie ? movie.title : ""}</h1>
+                <h1>{movie ? movie.name : ""}</h1>
+                <p>{movie ? movie.overview : ''}</p>
             </div>
             <div className="GenreLists">
                 <h1>Genre</h1>
                 <div className="PosterHolder">
-                    <img src="NetFilm-images/BackDrops/MovieDummy.jpg" alt="MoviePoster" />
+                    
                 </div>
             </div>
         </div>
