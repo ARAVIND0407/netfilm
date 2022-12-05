@@ -92,3 +92,16 @@
 .LinkBtn{
     text-decoration: none;
 }
+@media only screen and (max-width:600px){
+    .logoHolder{
+        margin-top: 30rem;
+    }
+    .logoHolder .ShutterLogo{
+        width: 15rem;
+        height: 15rem;
+    }
+    .logoHolder .TextLogo{
+        width: 20rem;
+        height: 10rem;
+    }
+}
