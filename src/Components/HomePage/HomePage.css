@@ -76,22 +76,68 @@
     transform: scale(110%);
 }
 
-.TrendingBannerMain h1 {
+.aboutHolder{
     position: absolute;
     top: 10rem;
     left: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+.aboutHolder h1 { 
     font-size: 8rem;
     font-weight: 400;
     color: #fff;
 }
 
-.TrendingBannerMain p {
-    position: absolute;
-    top: 22rem;
-    left: 2rem;
+.aboutHolder p {
     font-size: 2.5rem;
-    max-width: 50rem;
+    max-width: 100rem;
     color: #fff;
+}
+.aboutHolder .DetailsBtn{
+    width: 15rem;
+    margin: 2rem auto 0;
+    border: 0;
+    outline: 0;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #000;
+    position: relative;
+}
+.DetailsBtn::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transition: 0.5s;
+}
+.DetailsBtn::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transition: 0.5s;
+}
+.DetailsBtn:hover::before{
+    top: -1rem;
+    left: -1rem;
+}
+.DetailsBtn:hover::after{
+    bottom: -1rem;
+    right: -1rem;
 }
 
 @media only screen and (max-width:600px) {
@@ -99,18 +145,21 @@
         height: 50rem;
     }
 
-    .TrendingBannerMain h1 {
+    .aboutHolder h1 {
         font-size: 3.5rem;
         font-weight: 800;
         text-decoration: underline;
     }
 
-    .TrendingBannerMain p {
+    .aboutHolder p {
         padding-right: 2rem;
         text-align: justify;
         top: 19rem;
         font-size: 2rem;
         max-width: 100%;
+    }
+    .aboutHolder .DetailsBtn{
+        margin-right: 2rem;
     }
 }
 

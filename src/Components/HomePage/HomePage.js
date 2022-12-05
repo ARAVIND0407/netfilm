@@ -3,7 +3,7 @@ import './HomePage.css';
 import axios from '../Extras/axios_custom';
 import { useState } from 'react';
 import { ImageUrl, trending, API_Key } from '../Extras/Urls';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function HomePage(props) {
 
@@ -18,9 +18,9 @@ function HomePage(props) {
         })
     }, [])
 
-    const displayDetails = (id)=>{
+    const displayDetails = (id) => {
         console.log(id);
-        axios.get(`/movie/${id}?api_key=${API_Key}&language=en-US`).then((res)=>{
+        axios.get(`/movie/${id}?api_key=${API_Key}&language=en-US`).then((res) => {
             setMovie(res.data)
         })
     }
@@ -38,16 +38,19 @@ function HomePage(props) {
             <div className="TrendingBannerMain">
                 <img src={`${movie ? ImageUrl + movie.backdrop_path : ''}`} alt="MovieBanner" />
                 <div className="overLay"></div>
-                <h1>{movie ? movie.title : ""}</h1>
-                <h1>{movie ? movie.name : ""}</h1>
-                <p>{movie ? movie.overview : ''}</p>
+                <div className="aboutHolder">
+                    <h1>{movie ? movie.title : ""}</h1>
+                    <h1>{movie ? movie.name : ""}</h1>
+                    <p>{movie ? movie.overview : ''}</p>
+                    <button className='DetailsBtn'>Details</button>
+                </div>
             </div>
             <div className="GenreLists">
                 <h1>{props.title}</h1>
                 <div className="PosterHolder">
                     {poster.map((object) => {
-                        return(
-                            <img onClick={()=>displayDetails(object.id)} src={movie ? ImageUrl + object.poster_path : ''} alt="MoviePoster" />
+                        return (
+                            <img onClick={() => displayDetails(object.id)} src={movie ? ImageUrl + object.poster_path : ''} alt="MoviePoster" />
                         )
                     })}
                 </div>
