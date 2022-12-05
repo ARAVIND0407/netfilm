@@ -75,7 +75,7 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: -5px;
-    animation: lineWave 1s ease-in-out alternate infinite;
+    animation: lineWave 5s ease-in-out forwards;
 }
 
 @keyframes lineWave {
@@ -87,4 +87,8 @@
         width: 90%;
         background: #fff;
     }
+}
+
+.LinkBtn{
+    text-decoration: none;
 }

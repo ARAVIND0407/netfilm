@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
-import './HomePage.css'
-import axios from '../Extras/axios_custom'
-import { useState } from 'react'
-import { ImageUrl, trending, API_Key } from '../Extras/Urls'
+import React, { useEffect } from 'react';
+import './HomePage.css';
+import axios from '../Extras/axios_custom';
+import { useState } from 'react';
+import { ImageUrl, trending, API_Key } from '../Extras/Urls';
+import {Link} from 'react-router-dom';
 
 function HomePage(props) {
 
@@ -27,7 +28,7 @@ function HomePage(props) {
         <div className='HomePage-Container'>
             <nav>
                 <div className="SmallLogoLeft">
-                    <img src="NetFilm-images/Logos/NetFilms-Light.png" alt="SmallLogo" />
+                    <Link to='/'><img src="NetFilm-images/Logos/NetFilms-Light.png" alt="SmallLogo" /></Link>
                 </div>
                 <div className="searchBar">
                     <input type="text" placeholder='Search' />

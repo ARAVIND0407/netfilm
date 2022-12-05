@@ -1,9 +1,10 @@
-.HomePage-Container{
+.HomePage-Container {
     width: 100%;
     height: fit-content;
     background: #2e2e2e;
 }
-.HomePage-Container nav{
+
+.HomePage-Container nav {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -12,22 +13,26 @@
     flex-wrap: wrap;
     background: #39DC00;
 }
-.HomePage-Container nav .SmallLogoLeft{
+
+.HomePage-Container nav .SmallLogoLeft {
     width: fit-content;
     height: 100%;
     padding: 1rem;
 }
-.SmallLogoLeft img{
+
+.SmallLogoLeft img {
     width: 10rem;
 }
-.HomePage-Container nav .searchBar{
+
+.HomePage-Container nav .searchBar {
     width: fit-content;
     height: 100%;
     display: flex;
     align-items: center;
-   margin: 1rem;
+    margin: 1rem;
 }
-.searchBar input{
+
+.searchBar input {
     width: 25rem;
     height: 2.5rem;
     border: 0;
@@ -35,12 +40,14 @@
     border-radius: 0.5rem;
     padding: 0 1rem;
 }
-.searchBar i{
+
+.searchBar i {
     color: #fff;
     font-size: 2rem;
     padding: 0 1rem;
 }
-.TrendingBannerMain{
+
+.TrendingBannerMain {
     width: 99%;
     height: 80rem;
     margin: 0 auto;
@@ -48,24 +55,28 @@
     overflow: hidden;
     position: relative;
 }
-.TrendingBannerMain img{
+
+.TrendingBannerMain img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 10s ease-in-out;
 }
-.TrendingBannerMain .overLay{
+
+.TrendingBannerMain .overLay {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(90deg,#2e2e2e,rgba(0,0,0,0),#2e2e2e);
+    background: linear-gradient(90deg, #2e2e2e, rgba(0, 0, 0, 0), #2e2e2e);
     top: 0;
     left: 0;
 }
-.TrendingBannerMain img:hover{
+
+.TrendingBannerMain img:hover {
     transform: scale(110%);
 }
-.TrendingBannerMain h1{
+
+.TrendingBannerMain h1 {
     position: absolute;
     top: 10rem;
     left: 2rem;
@@ -73,7 +84,8 @@
     font-weight: 400;
     color: #fff;
 }
-.TrendingBannerMain p{
+
+.TrendingBannerMain p {
     position: absolute;
     top: 22rem;
     left: 2rem;
@@ -81,16 +93,19 @@
     max-width: 50rem;
     color: #fff;
 }
-@media only screen and (max-width:600px){
-    .TrendingBannerMain{
+
+@media only screen and (max-width:600px) {
+    .TrendingBannerMain {
         height: 50rem;
     }
-    .TrendingBannerMain h1{
+
+    .TrendingBannerMain h1 {
         font-size: 3.5rem;
         font-weight: 800;
         text-decoration: underline;
     }
-    .TrendingBannerMain p{
+
+    .TrendingBannerMain p {
         padding-right: 2rem;
         text-align: justify;
         top: 19rem;
@@ -98,31 +113,38 @@
         max-width: 100%;
     }
 }
-.GenreLists{
+
+.GenreLists {
     flex-basis: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     padding: 0 2rem;
     margin-bottom: 2rem;
-    overflow: hidden;
-    
 }
-.GenreLists h1{
+
+.GenreLists h1 {
     color: #fff;
     font-size: 3rem;
     font-weight: 300;
 }
-.PosterHolder{
+
+.PosterHolder {
     width: 100%;
     height: fit-content;
     gap: 2rem;
     display: flex;
-    overflow-x: scroll; 
+    overflow-x: scroll;
 }
-.PosterHolder img{
+
+.PosterHolder img {
     width: auto;
-    height: 30rem;
+    height: 32.5rem;
     border-radius: 1rem;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.PosterHolder img:hover {
+    transform: translateY(-1rem);
 }

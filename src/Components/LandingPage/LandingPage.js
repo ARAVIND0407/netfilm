@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingPage.css';
+import {Link} from 'react-router-dom'
 
 function LandingPage() {
     return (
@@ -9,7 +10,7 @@ function LandingPage() {
                 <img className='TextLogo' src="NetFilm-images/Logos/NetFilms-Light-Text.png" alt="LogoText" />
             </div>
             <div className="ExploreBtnHolder">
-                <button className='ExploreBtn'>EXPLORE</button>
+                <Link className ='LinkBtn' to='/home'><button className='ExploreBtn'>EXPLORE</button></Link>
             </div>
         </div>
     )
