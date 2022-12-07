@@ -1,7 +1,5 @@
-# NetFilm (work in progress)
+# NetFilm
 A simple movie review viewing app
-
-Api Keys are not provided
 
 
 

@@ -30,10 +30,10 @@ function HomePage(props) {
                 <div className="SmallLogoLeft">
                     <Link to='/'><img src="NetFilm-images/Logos/NetFilms-Light.png" alt="SmallLogo" /></Link>
                 </div>
-                <div className="searchBar">
+                {/* <div className="searchBar">
                     <input type="text" placeholder='Search' />
                     <i className="fa-solid fa-magnifying-glass"></i>
-                </div>
+                </div> */}
             </nav>
             <div className="TrendingBannerMain">
                 <img src={`${movie ? ImageUrl + movie.backdrop_path : ''}`} alt="MovieBanner" />
